@@ -22,6 +22,8 @@ const loadAllPlants=(()=>{
     })
 })
 const showAllPlants=((plants)=>{
+    const allTree=document.getElementById('all-trees')
+    allTree.classList.add('bg-green-700', 'text-white');
     const cardDiv=document.getElementById('card-div')
     cardDiv.innerHTML=""
    plants.forEach((plant)=>{
