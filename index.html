@@ -53,7 +53,8 @@
               <li><a>Plant a Tree</a></li>
             </ul>
           </div>
-          <a class="btn btn-ghost text-xl text-white pl-0 lg:pl-30"
+          <a
+            class="btn btn-ghost text-xl text-white ml-0 lg:ml-30 font-semibold"
             >🌱 Green Earth</a
           >
         </div>
@@ -72,20 +73,45 @@
         </div>
       </div>
       <!-- hero section -->
-      <section class="flex flex-col lg:flex-row justify-between items-center bg-[#cff0dc]">
+      <section
+        class="flex flex-col lg:flex-row justify-between items-center bg-[#cff0dc]"
+      >
         <img src="./assets/hero-leaf1.png" alt="" />
         <div class="text-center space-y-3 my-7 lg:my-0">
           <h1 class="font-bold text-4xl">Plant a Tree, Grow a Future</h1>
           <p class="text-[#1f2937] px-2 lg:px-0">
             Join our mission to plant 1 million trees and make the Earth greener
-            for future <br> generations.
+            for future <br />
+            generations.
           </p>
           <button class="btn rounded-2xl bg-[#facc15] text-green-700">
             Get Involved
           </button>
         </div>
-        <img src="./assets/hero-leaf2.png" alt="" class=" hidden lg:block">
+        <img src="./assets/hero-leaf2.png" alt="" class="hidden lg:block" />
       </section>
     </header>
+    <main class="bg-[#f0fdf4]">
+      <h1 class="text-3xl pt-25 font-semibold text-center">
+        Choose Your Trees
+      </h1>
+      <section class="py-20 px-4  lg:px-0 lg:w-10/12 lg:mx-auto gap-6 grid grid-cols-1 lg:grid-cols-6">
+        <div id="categories-div" class="lg:col-span-1">
+          <h1 class="font-bold text-2xl">Categories</h1>
+          <div id="categories-container">
+            <a class="my-2 block pl-3 py-1  hover:bg-green-700 hover:text-white cursor-pointer"
+              >All Trees</a
+            >
+          </div>
+        </div>
+        <div id="card-div" class="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:col-span-4">
+         
+        </div>
+        <div class="bg-white shadow-sm col-span-1 p-4 rounded-lg">
+          <h1 class="font-bold text-2xl">Your Cart</h1>
+        </div>
+      </section>
+    </main>
+    <script src="./js/script.js"></script>
   </body>
 </html>
