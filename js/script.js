@@ -15,7 +15,7 @@ const loadCategories = () => {
   fetch("https://openapi.programming-hero.com/api/categories")
     .then((res) => res.json())
     .then((data) => showCategories(data.categories))
-    .catch((err) => console.error(err));
+    .catch((err) => alert('❌ failed'));
 };
 
 // Show categories
@@ -39,7 +39,7 @@ const loadAllPlants = () => {
   fetch("https://openapi.programming-hero.com/api/plants")
     .then((res) => res.json())
     .then((data) => showTreeCategories(data.plants))
-    .catch((err) => console.error(err));
+    .catch((err) => alert('❌ failed'));
 };
 
 // category plants
@@ -48,7 +48,7 @@ const loadPlantsByCategory = (id) => {
   fetch(`https://openapi.programming-hero.com/api/category/${id}`)
     .then((res) => res.json())
     .then((data) => showTreeCategories(data.plants))
-    .catch((err) => console.error(err));
+    .catch((err) => alert('❌ failed'));
 };
 
 // Show plants
@@ -58,10 +58,10 @@ const showTreeCategories = (plants) => {
     cardDiv.innerHTML += `
       <div class="card bg-base-100 p-3 shadow-sm">
         <figure>
-          <img src="${plant.image}" class="w-full h-50" />
+          <img src="${plant.image}" class="w-full h-55 object-cover" />
         </figure>
         <div class="card-body px-2">
-          <h2 class="card-title">${plant.name}</h2>
+          <h2 onclick="loadTreeDetails(${plant.id})" class="card-title">${plant.name}</h2>
           <p>${plant.description}</p>
           <div class="flex justify-between items-center">
             <div class="bg-[#dcfce7] text-green-700 font-semibold p-2 rounded-2xl">
@@ -95,6 +95,35 @@ categoriesContainer.addEventListener("click", (event) => {
   }
 });
 
+// modal
+const loadTreeDetails = (id) => {
+  const url = `https://openapi.programming-hero.com/api/plant/${id}`;
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => {
+      showTreeDetails(data.plants);
+    })
+    .catch((err) => alert('❌ failed'));
+};
+
+const showTreeDetails = (plant) => {
+  const treeDetails = document.getElementById("tree-details-content");
+  treeDetails.innerHTML = `
+    <img src="${plant.image}" alt="${plant.name}" class=" h-60 w-full object-cover mx-auto mb-3 rounded-lg">
+    <h3 class="text-lg font-bold">${plant.name}</h3>
+    <p class="text-gray-600 mb-2">${plant.category}</p>
+    <p class="py-2">${plant.description}</p>
+    <p class="font-semibold text-green-600 bg-[#dcfce7] p-2 rounded-2xl w-fit">${plant.category}</p>
+    <div class="modal-action">
+      <form method="dialog">
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  `;  
+  document.getElementById("tree-details").showModal();
+};
+
+
 // cart functionality
 let total = 0;
 let cartItems = {};
@@ -108,7 +137,7 @@ cardDiv.addEventListener("click", (e) => {
     const div = document.createElement("div");
     div.className =
       "flex justify-between items-center bg-[#F0FDF4] p-3 my-3 rounded-lg";
-    div.innerHTML = `<div><h2 class="font-bold mb-2">${name}</h2><p class="text-gray-400"> ${price} x 0</p></div><div><h2 class="remove-btn cursor-pointer">❌</h2></div>`;
+    div.innerHTML = `<div><h2 class="font-bold mb-2">${name}</h2><p class="text-gray-400"> ${price} x 0.00</p></div><div><h2 class="remove-btn cursor-pointer">❌</h2></div>`;
     div.querySelector(".remove-btn").onclick = () => {
       total -= cartItems[name].price * cartItems[name].count;
       div.remove();
@@ -122,7 +151,6 @@ cardDiv.addEventListener("click", (e) => {
   cartItems[name].count++;
   total += price;
   cartItems[name].element.querySelector("p").innerHTML = `<i class="fa-solid fa-bangladeshi-taka-sign"></i> ${price} x ${cartItems[name].count}`;
-
   document.getElementById("total-price").innerText = `${total}`;
 });
 
