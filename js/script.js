@@ -6,7 +6,7 @@ const cartDiv = document.getElementById("cart-div");
 // spinner
 const showLoading = () => {
   cardDiv.innerHTML = `<h1 class="text-center text-2xl col-span-full">
-    Loading <span class="loading loading-spinner loading-xl"></span>
+    <span class="loading loading-spinner loading-xl"></span>
   </h1>`;
 };
 
@@ -157,3 +157,4 @@ cardDiv.addEventListener("click", (e) => {
 //function call
 loadCategories();
 loadAllPlants();
+
