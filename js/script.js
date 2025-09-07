@@ -1,6 +1,12 @@
 // Declare
 const categoriesContainer = document.getElementById('categories-container');
 const cardDiv = document.getElementById('card-div');
+// spinner
+const showLoading = () => {
+  cardDiv.innerHTML = `<h1 class="text-center text-2xl col-span-full">
+    Loading <span class="loading loading-spinner loading-xl"></span>
+  </h1>`;
+};
 
 // categories
 const loadCategories = () => {
@@ -26,6 +32,7 @@ const showCategories = (categories) => {
 };
 
 const loadTreeCategories = (id) => {
+  showLoading()
   const url = id 
     ? `https://openapi.programming-hero.com/api/category/${id}` 
     : `https://openapi.programming-hero.com/api/plants`;
@@ -78,3 +85,4 @@ categoriesContainer.addEventListener("click", (event) => {
 //function call
 loadCategories();
 loadTreeCategories();
+
