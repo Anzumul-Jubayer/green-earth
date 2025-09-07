@@ -1,6 +1,9 @@
 // Declare
 const categoriesContainer = document.getElementById('categories-container');
 const cardDiv = document.getElementById('card-div');
+const cartDiv=document.getElementById('cart-div')
+
+
 // spinner
 const showLoading = () => {
   cardDiv.innerHTML = `<h1 class="text-center text-2xl col-span-full">
@@ -48,7 +51,7 @@ const showTreeCategories = (plants) => {
   cardDiv.innerHTML = "";
   plants.forEach(plant => {
     cardDiv.innerHTML += `
-      <div class="card bg-base-100 p-3 shadow-sm">
+      <div  class="p card bg-base-100 p-3 shadow-sm">
         <figure>
           <img src="${plant.image}" class="w-full h-50" />
         </figure>
@@ -81,6 +84,49 @@ categoriesContainer.addEventListener("click", (event) => {
     loadTreeCategories(id === "all-trees" ? "" : id);
   }
 });
+
+let clickCount=0
+cardDiv.addEventListener('click', (event) => {
+  if(event.target.classList.contains('btn')) {
+    const card = event.target.closest('.card');
+    const plantName = card.querySelector('.card-title').innerText;
+    const plantPrice = card.querySelector('h3').innerText;
+    const cartItem = document.createElement('div');
+    clickCount++
+    cartItem.className = "flex justify-between items-center bg-[#F0FDF4] p-3 my-3 rounded-lg";
+    cartItem.innerHTML = `
+      <div>
+        <h2 class="font-bold mb-2">${plantName}</h2>
+        <p class="text-gray-400">${plantPrice} x ${clickCount}</p>
+      </div>
+      <div>
+        <h2 class="remove-btn cursor-pointer">❌</h2>
+      </div>
+    `;
+    cartDiv.appendChild(cartItem);
+    cartItem.querySelector('.remove-btn').addEventListener('click', () => {
+      cartItem.remove();
+    });
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //function call
 loadCategories();
