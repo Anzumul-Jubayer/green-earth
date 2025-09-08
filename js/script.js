@@ -132,7 +132,8 @@ let cartItems = {};
 cardDiv.addEventListener("click", (event) => {
   if (event.target.tagName === "BUTTON") {
     const getTitle = event.target.parentNode.parentNode.children[0].innerText;
-    const getPrice = event.target.parentNode.parentNode.children[2].children[1].innerText;
+    const getPrice =
+      event.target.parentNode.parentNode.children[2].children[1].innerText;
     const priceNumber = parseInt(getPrice);
     if (!cartItems[getTitle]) {
       const div = document.createElement("div");
@@ -140,7 +141,7 @@ cardDiv.addEventListener("click", (event) => {
       <div class="flex justify-between items-center bg-green-100 p-3 rounded-lg my-3">
             <div>
               <h2 class="font-semibold">${getTitle}</h2>
-              <p class="text-gray-400">${getPrice} x 1</p>
+              <p class="text-gray-400"><i class="fa-solid fa-bangladeshi-taka-sign"></i>  ${getPrice} x 1</p>
             </div>
             <h2>
              <span class="del-btn cursor-pointer"> ❌ </span>
@@ -153,22 +154,19 @@ cardDiv.addEventListener("click", (event) => {
         total -= priceNumber * cartItems[getTitle].count;
         div.innerHTML = "";
         delete cartItems[getTitle];
-        document.getElementById('total-value').innerText = total;
+        document.getElementById("total-value").innerText = total;
       });
-      cartItems[getTitle]={ count:1,price:priceNumber,element:div}
-      
-    } else{
-      cartItems[getTitle].count+=1
-      const p=cartItems[getTitle].element.querySelector('p')
-      p.innerText = `${getPrice} x ${cartItems[getTitle].count}`;
+      cartItems[getTitle] = { count: 1, price: priceNumber, element: div };
+    } else {
+      cartItems[getTitle].count += 1;
+      const p = cartItems[getTitle].element.querySelector("p");
+      p.innerHTML = `<i class="fa-solid fa-bangladeshi-taka-sign"></i> ${getPrice} x ${cartItems[getTitle].count}`;
     }
 
-  total += priceNumber
- document.getElementById('total-value').innerText= total
+    total += priceNumber;
+    document.getElementById("total-value").innerText = total;
   }
 });
-
-
 
 //function call
 loadCategories();
