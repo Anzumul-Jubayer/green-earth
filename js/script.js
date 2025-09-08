@@ -132,7 +132,7 @@ let cartItems = {};
 cardDiv.addEventListener("click", (event) => {
   if (event.target.tagName === "BUTTON") {
     const getTitle = event.target.parentNode.parentNode.children[0].innerText;
-    alert(`${getTitle} has been added to cart`)
+    alert(`${getTitle} has been added to cart`);
     const getPrice =
       event.target.parentNode.parentNode.children[2].children[1].innerText;
     const priceNumber = parseInt(getPrice);
@@ -172,4 +172,3 @@ cardDiv.addEventListener("click", (event) => {
 //function call
 loadCategories();
 loadAllPlants();
-

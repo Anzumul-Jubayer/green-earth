@@ -110,16 +110,19 @@
           id="card-div"
           class="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:col-span-4"
         ></div>
-        <div class="bg-white shadow-sm col-span-1 p-4 rounded-lg lg:overflow-x-auto lg:h-134">
+        <div
+          class="bg-white shadow-sm col-span-1 p-4 rounded-lg lg:overflow-x-auto lg:h-134"
+        >
           <h1 class="font-bold text-2xl py-4">Your Cart</h1>
           <div id="cart-div"></div>
-          
+
           <div>
             <hr class="border-1 border-gray-300" />
             <div class="flex justify-between">
               <h2 class="font-bold">Total</h2>
               <h2 id="total-price" class="font-bold">
-                <i class="fa-solid fa-bangladeshi-taka-sign"></i> <span id="total-value">0</span>
+                <i class="fa-solid fa-bangladeshi-taka-sign"></i>
+                <span id="total-value">0</span>
               </h2>
             </div>
           </div>
@@ -155,15 +158,21 @@
         <div
           class="flex flex-col lg:flex-row justify-center gap-5 lg:gap-20 px-3 lg:px-0 pt-10"
         >
-          <div class="text-center bg-white shadow-lg py-10 px-35 rounded-lg hover:bg-[#cff0dc] cursor-pointer">
+          <div
+            class="text-center bg-white shadow-lg py-10 px-35 rounded-lg hover:bg-[#cff0dc] cursor-pointer"
+          >
             <h1 class="text-green-600 text-3xl">500k+</h1>
             <p class="text-xl text-gray-400">Trees Planted</p>
           </div>
-          <div class="text-center bg-white shadow-lg py-10 px-35 rounded-lg hover:bg-[#cff0dc] cursor-pointer">
+          <div
+            class="text-center bg-white shadow-lg py-10 px-35 rounded-lg hover:bg-[#cff0dc] cursor-pointer"
+          >
             <h1 class="text-green-600 text-3xl">120k+</h1>
             <p class="text-xl text-gray-400">Communities Involved</p>
           </div>
-          <div class="text-center bg-white shadow-lg py-10 px-35 rounded-lg hover:bg-[#cff0dc] cursor-pointer">
+          <div
+            class="text-center bg-white shadow-lg py-10 px-35 rounded-lg hover:bg-[#cff0dc] cursor-pointer"
+          >
             <h1 class="text-green-600 text-3xl">30k+</h1>
             <p class="text-xl text-gray-400">Countries Reached</p>
           </div>
@@ -183,20 +192,40 @@
               placeholder="Your Email Address"
               class="input input-md mt-2"
             />
-             <ul class="menu bg-base-200 rounded-box w-full  mt-2">
-            <li>
-              <details>
-                <summary>Number of Tree</summary>
-                <ul >
-                  <li class="hover:bg-gray-500 hover:p-3 hover:rounded-lg hover:cursor-pointer">1 Tree - 20 ৳ </li>
-                  <li class="hover:bg-gray-500 hover:p-3 hover:rounded-lg cursor-pointer">5 Tree - 100 ৳</li>
-                  <li class="hover:bg-gray-500 hover:p-3 hover:rounded-lg cursor-pointer">10 Tree - 200 ৳</li>
-                  <li class="hover:bg-gray-500 hover:p-3 hover:rounded-lg cursor-pointer">12 Tree - 240 ৳</li>
-                  <li class="hover:bg-gray-500 hover:p-3 hover:rounded-lg cursor-pointer">15 Tree - 300 ৳</li>
-                 </ul>
-              </details>
-            </li>
-          </ul>
+            <ul class="menu bg-base-200 rounded-box w-full mt-2">
+              <li>
+                <details>
+                  <summary>Number of Tree</summary>
+                  <ul>
+                    <li
+                      class="hover:bg-gray-500 hover:p-3 hover:rounded-lg hover:cursor-pointer"
+                    >
+                      1 Tree - 20 ৳
+                    </li>
+                    <li
+                      class="hover:bg-gray-500 hover:p-3 hover:rounded-lg cursor-pointer"
+                    >
+                      5 Tree - 100 ৳
+                    </li>
+                    <li
+                      class="hover:bg-gray-500 hover:p-3 hover:rounded-lg cursor-pointer"
+                    >
+                      10 Tree - 200 ৳
+                    </li>
+                    <li
+                      class="hover:bg-gray-500 hover:p-3 hover:rounded-lg cursor-pointer"
+                    >
+                      12 Tree - 240 ৳
+                    </li>
+                    <li
+                      class="hover:bg-gray-500 hover:p-3 hover:rounded-lg cursor-pointer"
+                    >
+                      15 Tree - 300 ৳
+                    </li>
+                  </ul>
+                </details>
+              </li>
+            </ul>
 
             <button
               class="bg-[#facc15] py-2 px-29 rounded-2xl mt-3 text-green-600 hover:bg-gray-100"
@@ -208,9 +237,7 @@
       </section>
       <!-- modal -->
       <dialog id="tree-details" class="modal modal-bottom sm:modal-middle">
-        <div class="modal-box" id="tree-details-content">
-          
-        </div>
+        <div class="modal-box" id="tree-details-content"></div>
       </dialog>
     </main>
     <!-- footer -->
@@ -222,4 +249,3 @@
     <script src="./js/script.js"></script>
   </body>
 </html>
-
