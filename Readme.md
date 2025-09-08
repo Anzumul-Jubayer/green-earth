@@ -16,3 +16,12 @@
 | **Example:**<br> `const number=[1,2,3,4,5]` | **Example:**<br> `const number=[1,2,3,4,5]` | **Example:**<br> `const number=[1,2,3,4,5]` |
 | `number.forEach((n)=>console.log(n))`<br> `//Output:1,2,3,4,5` | `const double=number.map((n)=>n*2)`<br> `//Output:[2,4,6,8,10]` | `const even=number.filter((n)=>n%2==0)`<br> `//Output:[2,4]` |
 
+**3) What are arrow functions in ES6?**  
+**Answer:**
+Arrow function is different way to declare function in javascript. These are easier to read and cleaner version.
+Example
+```js
+const add = (a, b) => a + b;
+
+console.log(add(2, 3)); // Output:5
+```
