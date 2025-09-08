@@ -25,3 +25,12 @@ const add = (a, b) => a + b;
 
 console.log(add(2, 3)); // Output:5
 ```
+**4) How does destructuring assignment work in ES6?**  
+**Answer:**
+Destructuring is get value from array or object and assign them in a single line.It makes code easy to read and understandable.
+Example
+```js
+const num=[1,2,3,4] 
+const [a,b]=num
+console.log(a,b)// Output:1 2
+```
