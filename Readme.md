@@ -34,3 +34,20 @@ const num=[1,2,3,4]
 const [a,b]=num
 console.log(a,b)// Output:1 2
 ```
+**5) Explain template literals in ES6. How are they different from string concatenation?**  
+**Answer:**
+Template string are create string using backticks(``)instead of quotes("").It use to insert value in dynamically .
+Example
+```js
+const name = "Rahim";
+const age = 22;
+// Using template 
+const value1 = `My name is ${name} and I am ${age} years old.`;
+console.log(value1); 
+// Output: My name is Rahim and I am 22 years old.
+
+// Using string 
+const value2 = "My name is " + name + " and I am " + age + " years old.";
+console.log(value2);
+// Output: My name is Rahim and I am 22 years old.
+```
