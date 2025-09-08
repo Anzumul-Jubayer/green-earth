@@ -112,11 +112,11 @@ const loadTreeDetails = (id) => {
 const showTreeDetails = (plant) => {
   const treeDetails = document.getElementById("tree-details-content");
   treeDetails.innerHTML = `
-    <img src="${plant.image}" alt="${plant.name}" class=" h-60 w-full object-cover mx-auto mb-3 rounded-lg">
-    <h3 class="text-lg font-bold">${plant.name}</h3>
-    <p class="text-gray-600 mb-2">${plant.category}</p>
-    <p class="py-2">${plant.description}</p>
-    <p class="font-semibold text-green-600 bg-[#dcfce7] p-2 rounded-2xl w-fit">${plant.category}</p>
+    <h3 class="text-lg font-bold mb-3">${plant.name}</h3>
+    <img src="${plant.image}" alt="" class=" h-60 w-full object-cover mx-auto mb-3 rounded-lg"> 
+    <p class="text-gray-600 mb-2"><span class="font-bold">Category:</span> ${plant.category}</p>
+    <p class="text-gray-600 mb-2"><span class="font-bold">Price:</span><i class="fa-solid fa-bangladeshi-taka-sign"></i> ${plant.price}</p>
+    <p class="text-gray-600 mb-2"><span class="font-bold">Description: </span>${plant.description}</p>
     <div class="modal-action">
       <form method="dialog">
         <button class="btn">Close</button>
