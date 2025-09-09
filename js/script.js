@@ -64,7 +64,7 @@ const showTreeCategories = (plants) => {
         </figure>
         <div class="card-body px-2">
           <h2  class="card-title"> <span onclick="loadTreeDetails(${plant.id})" class="cursor-pointer"> ${plant.name}</span> </h2>
-          <p>${plant.description}</p>
+          <p>${plant.description.slice(0,80)}...</p>
           <div class="flex justify-between items-center">
             <div class="bg-[#dcfce7] text-green-700 font-semibold p-2 rounded-2xl">
               <p>${plant.category}</p>
@@ -172,3 +172,4 @@ cardDiv.addEventListener("click", (event) => {
 //function call
 loadCategories();
 loadAllPlants();
+
